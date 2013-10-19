@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "Check for data sql to run ..."
+
+for sql in /vagrant/database/mysql/data/*.sql
+do
+  echo "run base script $sql"
+  mysql -u root -p<%= node['mysql']['server_root_password'] %> < "$sql"
+done

@@ -1,0 +1,1 @@
+SQL files created with mysqldump should be stored in database/backups.

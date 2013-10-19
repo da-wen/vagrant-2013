@@ -1,0 +1,30 @@
+server {
+  listen 80 default;
+ 
+  server_name localhost webdev;
+
+  root /vagrant/www;
+ 
+  access_log /var/log/nginx/webdev.access.log;
+  error_log /var/log/nginx/webdev.error.log;
+ 
+  location /phpinfo/ {
+    rewrite ^ /phpinfo/phpinfo.php;
+  }
+
+  location / {
+    index default/index.php;
+  }
+
+  location ~ ^(.*)\.php$ {
+    if (!-f $request_filename) {
+      return 404;
+    }
+
+    include fastcgi_params;
+
+    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    fastcgi_param HTTPS off;
+  }
+}

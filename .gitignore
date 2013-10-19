@@ -1,0 +1,9 @@
+.DS_Store
+/.vagrant
+!/chef/cookbooks/da-wen
+/www/default/*
+/www/silex/*
+/www/symfony2/*
+!/database/mysql/backups/*.txt
+!/database/mysql/base/*.txt
+!/database/mysql/data/*.txt
