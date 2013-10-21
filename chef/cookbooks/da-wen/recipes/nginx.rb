@@ -39,6 +39,13 @@ nginx_site '002-symfony2' do
   enable true
 end
 
+directory "/vagrant/www/default" do
+  owner "root"
+  group "root"
+  mode 00777
+  action :create
+end
+
 cookbook_file "/vagrant/www/default/index.php" do
   source "vagrant/www/default/index.php"
   owner "vagrant"

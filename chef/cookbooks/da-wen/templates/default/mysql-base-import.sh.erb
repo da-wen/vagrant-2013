@@ -4,6 +4,10 @@ echo "Check for base sql to run ..."
 
 for sql in /vagrant/database/mysql/base/*.sql
 do
-  echo "run data script $sql"
-  mysql -u root -p<%= node['mysql']['server_root_password'] %> < "$sql"
+  if [ -f $sql ]
+  then
+  	echo "run data script $sql"
+    mysql -u root -p<%= node['mysql']['server_root_password'] %> < "$sql"
+  fi
 done
+

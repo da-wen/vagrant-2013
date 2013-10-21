@@ -23,7 +23,11 @@ Vagrant::Config.run do |config|
     config_webdev54.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     config_webdev54.vm.host_name = "dawen-webdev54"
+
+    #change the comments of these line for you preferred network type
     config_webdev54.vm.network :hostonly, "192.168.50.54"
+    #config_webdev54.vm.network :bridged, "192.168.50.54"
+
     config_webdev54.vm.forward_port 80, 8054
 
     config_webdev54.vm.provision :chef_solo do |chef|
@@ -44,7 +48,12 @@ Vagrant::Config.run do |config|
     config_webdev55.vm.box_url = "http://files.vagrantup.com/precise64.box"
 
     config_webdev55.vm.host_name = "dawen-webdev55"
+
+    #change the comments of these line for you preferred network type
     config_webdev55.vm.network :hostonly, "192.168.50.55"
+    #config_webdev55.vm.network :bridged, "192.168.50.55"
+    
+
     config_webdev55.vm.forward_port 80, 8055
 
     config_webdev55.vm.provision :chef_solo do |chef|
