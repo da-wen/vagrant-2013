@@ -26,6 +26,7 @@ Vagrant::Config.run do |config|
 
     #change the comments of these line for you preferred network type
     config_webdev54.vm.network :hostonly, "192.168.50.54"
+    #config_webdev55.vm.network :private_network, "192.168.50.54"
     #config_webdev54.vm.network :bridged, "192.168.50.54"
 
     config_webdev54.vm.forward_port 80, 8054
@@ -51,6 +52,7 @@ Vagrant::Config.run do |config|
 
     #change the comments of these line for you preferred network type
     config_webdev55.vm.network :hostonly, "192.168.50.55"
+    #config_webdev55.vm.network :private_network, "192.168.50.55"
     #config_webdev55.vm.network :bridged, "192.168.50.55"
     
 
