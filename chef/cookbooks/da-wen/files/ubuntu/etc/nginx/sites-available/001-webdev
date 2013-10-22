@@ -3,17 +3,17 @@ server {
  
   server_name localhost webdev;
 
-  root /vagrant/www;
+  root /var/www/default;
  
   access_log /var/log/nginx/webdev.access.log;
   error_log /var/log/nginx/webdev.error.log;
  
   location /phpinfo/ {
-    rewrite ^ /phpinfo/phpinfo.php;
+    rewrite ^ /phpinfo.php;
   }
 
   location / {
-    index default/index.php;
+    index index.php;
   }
 
   location ~ ^(.*)\.php$ {

@@ -64,8 +64,6 @@ Vagrant::Config.run do |config|
     
     config_webdev55.vm.forward_port 80, 8055
 
-    config_webdev55.vm.share_folder("v-srv", "/srv", "../shared", :nfs => true)
-
     config_webdev55.vm.provision :chef_solo do |chef|
       chef.cookbooks_path = "chef/cookbooks"
       chef.roles_path = "chef/roles"

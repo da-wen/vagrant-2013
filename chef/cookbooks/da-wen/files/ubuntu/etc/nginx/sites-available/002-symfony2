@@ -5,7 +5,7 @@ upstream phpfcgi {
 server {
     listen 8081;
 
-    root /vagrant/www/symfony2/web;
+    root /var/www/symfony2/web;
 
     error_log /var/log/nginx/symfony2.error.log;
     access_log /var/log/nginx/symfony2.access.log;
